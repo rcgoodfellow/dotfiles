@@ -1,0 +1,48 @@
+[language-server.rust-analyzer.config]
+procMacro.enable = true
+procMacro.attributes.enable = true
+diagnostics.disabled = ["unresolved-proc-macro"]
+
+[language-server.clangd]
+command = "clangd"
+args = []
+
+[[language]]
+name = "p4"
+scope = "source.p4"
+file-types = ["p4"]
+injection-regex = "p4"
+
+#[[language]]
+#name = "htq"
+#scope = "source.htq"
+#file-types = ["htq"]
+#injection-regex = "htq"
+
+#[[language]]
+#name = "isf"
+#scope = "source.isf"
+#file-types = ["isf"]
+#injection-regex = "isf"
+
+[[grammar]]
+name = "p4"
+source.git = "https://github.com/oxidecomputer/tree-sitter-p4"
+
+#[[grammar]]
+#name = "htq"
+#source.path = "/Users/ry/src/tree-sitter-htq"
+
+#[[grammar]]
+#name = "isf"
+#source.path = "/Users/ry/src/tree-sitter-isf"
+
+[[language]]
+name = "cpp"
+language-servers = ["clangd"]
+roots = ["CMakeLists.txt"]
+
+[[language]]
+name = "c"
+language-servers = ["clangd"]
+roots = ["CMakeLists.txt", "Makefile"]
