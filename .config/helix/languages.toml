@@ -1,11 +1,12 @@
-[language-server.rust-analyzer.config]
-procMacro.enable = true
-procMacro.attributes.enable = true
-diagnostics.disabled = ["unresolved-proc-macro"]
+ [language-server.rust-analyzer.config]
+ procMacro.enable = true
+ procMacro.attributes.enable = true
+ diagnostics.disabled = ["unresolved-proc-macro"]
 
-[language-server.clangd]
-command = "clangd"
-args = []
+[[language]]
+name = "asciidoc"
+scope = "source.adoc"
+file-types = ["asciidoc", "adoc"]
 
 [[language]]
 name = "p4"
@@ -13,36 +14,31 @@ scope = "source.p4"
 file-types = ["p4"]
 injection-regex = "p4"
 
-#[[language]]
-#name = "htq"
-#scope = "source.htq"
-#file-types = ["htq"]
-#injection-regex = "htq"
 
-#[[language]]
-#name = "isf"
-#scope = "source.isf"
-#file-types = ["isf"]
-#injection-regex = "isf"
+[[language]]
+name = "htq"
+scope = "source.htq"
+file-types = ["htq"]
+injection-regex = "htq"
+
+[[language]]
+name = "isf"
+scope = "source.isf"
+file-types = ["isf"]
+injection-regex = "isf"
+
+[[grammar]]
+name = "asciidoc"
+source = { git = "https://github.com/cathaysia/tree-sitter-asciidoc", rev = "defd1172c30ff23e7778f8b699c7abadaa0d07dc", subpath = "tree-sitter-asciidoc" }
 
 [[grammar]]
 name = "p4"
-source.git = "https://github.com/oxidecomputer/tree-sitter-p4"
+source = { git = "https://github.com/oxidecomputer/tree-sitter-p4", rev = "f500fd650e4a47be33a5195c91b0f5192484585d" }
 
-#[[grammar]]
-#name = "htq"
-#source.path = "/Users/ry/src/tree-sitter-htq"
+[[grammar]]
+name = "htq"
+source = { path = "/Users/ry/src/tree-sitter-htq" }
 
-#[[grammar]]
-#name = "isf"
-#source.path = "/Users/ry/src/tree-sitter-isf"
-
-[[language]]
-name = "cpp"
-language-servers = ["clangd"]
-roots = ["CMakeLists.txt"]
-
-[[language]]
-name = "c"
-language-servers = ["clangd"]
-roots = ["CMakeLists.txt", "Makefile"]
+[[grammar]]
+name = "isf"
+source = { path = "/Users/ry/src/tree-sitter-isf" }
