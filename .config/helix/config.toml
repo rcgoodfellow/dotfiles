@@ -4,6 +4,8 @@ theme = "oxide"
 true-color = true
 bufferline = "always"
 gutters = ["line-numbers", "spacer"]
+scroll-lines = 3
+end-of-line-diagnostics = "disable"
 
 [editor.lsp]
 auto-signature-help = false
@@ -25,7 +27,7 @@ C-l = "select_next_sibling"
 0 = "goto_line_start"
 "$" = "goto_line_end"
 "^" = "goto_first_nonwhitespace"
-G = "goto_file_end"
+G = "goto_last_line"
 "%" = "match_brackets"
 V = ["select_mode", "extend_to_line_bounds"]
 C = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection", "insert_mode"]
@@ -111,7 +113,7 @@ C-p = "signature_help"
 0 = "goto_line_start"
 "$" = "goto_line_end"
 "^" = "goto_first_nonwhitespace"
-G = "goto_file_end"
+G = ["extend_to_last_line", "extend_to_line_end"]
 D = ["extend_to_line_bounds", "delete_selection", "normal_mode"]
 C = ["goto_line_start", "extend_to_line_bounds", "change_selection"]
 "%" = "match_brackets"
